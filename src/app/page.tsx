@@ -2,13 +2,13 @@
 import styles from "./page.module.css";
 import PhotoGrid from "./components/PhotoGrid/PhotoGrid";
 import Name from "./components/Name/Name";
-import { useState } from "react";
+import { KeyboardEvent, useState } from "react";
 import Lightbox from "./components/Lightbox/Lightbox";
 
 export default function Home() {
   const [lightboxPhoto, setLightboxPhoto] = useState("");
 
-  function handleKeyDown(e) {
+  function handleKeyDown(e: KeyboardEvent<HTMLDivElement>) {
     if (e.key === "Escape") {
       setLightboxPhoto("");
     }
